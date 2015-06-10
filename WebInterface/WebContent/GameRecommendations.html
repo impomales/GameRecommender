@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Game Recommender</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<div id="header">
+	<h1>Game Recommender</h1>
+	</div>
+	<div id="options">
+		<h2>Options</h2>
+		<form method="post" action="file.jsp">
+			Enter gamer id here. <br />
+			<input type="text" name="gamerID" size=20 /> <br />
+			<input type="radio" name="option" value="General" checked/> General <br />
+			<input type="radio" name="option" value="You may also like" /> You may also like <br />
+			<input type="radio" name="option" value="Specific Player" /> Specific Player <br />
+			<input type="submit" />
+		</form>
+	</div>
+	<div id="main">
+	<p>Please enter your gamer id <i>ex. 123</i> and select option.</p>
+	<p>ids range from 0 to 1000</p>
+	<h2>Discover New Games To Play!</h2>
+	<ul>
+		<li>General -- recommends the highest rated games</li>
+		<li>You may also like -- recommends games from players that also liked the games you liked</li>
+		<li>Specific Player -- Based on what a specific player rated highly</li>
+	</ul>
+	</div>
+		<div id="images">
+		<table id="table">
+			<tr>
+				<td><img src="images/dragon.jpg" width=100px height=150px alt="img1" /></td>
+				<td><img src="images/elder.jpg" width=100px height=150px alt="img2" /></td>
+				<td><img src="images/farcry.jpg" width=100px height=150px alt="img3" /></td>
+			</tr>
+			<tr>
+				<td><img src="images/ffxiv.jpg" width=100px height=150px alt="img3" /></td>
+				<td><img src="images/gtav.jpg" width=100px height=150px alt="img3" /></td>
+				<td><img src="images/issac.jpg" width=100px height=150px alt="img3" /></td>
+			</tr>
+			<tr>
+				<td><img src="images/lbp.jpg" width=100px height=150px alt="img3" /></td>
+				<td><img src="images/p4.jpg" width=100px height=150px alt="img3" /></td>
+				<td><img src="images/ssb.jpg" width=100px height=150px alt="img3" /></td>
+			</tr>
+		</table>
+	</div>
+	<div id="footer">
+		<small>Copyright © Isaias Pomales imp31@scarletmail.rutgers.edu</small>
+		<a href="verify.jsp">Click here to verify patterns.</a>
+	</div>
+
+</body>
+</html>

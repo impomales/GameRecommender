@@ -1,0 +1,4 @@
+*-Games mostly support devices with Windows OS, least with Linux.
+*-Players who prefer a certain category, rate games in those categories higher
+*-Games from the same country as a player are more likely to be rated higher
+*-Players who play Role playing games (RPGs) or multiplayers (MMOG) spend more hours playing.

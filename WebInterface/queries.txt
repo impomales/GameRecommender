@@ -1,0 +1,41 @@
+player id = 0
+// basic recommendation.
+// titles with high ratings player doesn't have.
+select p.title
+from plays p
+where gamerid <> 0
+group by p.title
+having avg(p.rating) >= 3
+
+let "games" be the titles from previous query
+
+// titles with high ratings that player can play
+select s.title, o.deviceid, o.os as own, s.os as supports
+from owns o, supports s, "games" g
+where o.gamerid = 0 and s.title = g.title and o.deviceid = s.deviceid and o.os = s.os;
+
+// devices and os supported by those games
+select s.*
+from supports s, "games" g
+where s.title = g.title 
+
+// based on another player 1 in this example. same as below (almost) 
+
+
+// based on ratings of games i own and other players owning the same games.
+//compares players who rated games i own highly and shows games they've also rated highly that i dont own
+// in place of "games" 
+select d.*
+from
+(select b.gamerid, b.title
+from 
+(select title
+from plays
+where gamerid = 0 and rating >= 3) a, plays b
+where b.gamerid <> 0(b.gamerid = 1 for another player) and b.title = a.title and b.rating >= 3) c, plays d
+where d.gamerid = c.gamerid and d.title <> c.title and d.rating >= 3;
+
+// highly recommend based on player preference.
+select g.*
+from "games" q, Games g, Players p
+where g.title = q.title and g.cat = p.pref
